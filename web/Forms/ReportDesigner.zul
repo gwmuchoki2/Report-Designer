@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window  title="Reports Designer"   id="winDesigner" border="normal" width="1300px"  
+             height="700px" closable="true">
+        <borderlayout  apply="Builder.ReportDesigner" height="650px">
+            <center>
+            <grid>
+                <columns>
+                    <column label="" width="200px" />
+                    <column label="" /> 
+                    <column label="" width="200px" />
+                    <column label="" />                     
+                </columns>                            
+                <rows>
+
+                <row>
+                    <label value="Report ID"/>
+                    <textbox id="txtReportID" width="200px" />   
+                    <label value="Report Name"/>
+                    <textbox id="txtReportName" width="300px" />                                                      
+                </row>
+                <row>
+                    <label value="Report Type"/>
+                    <combobox id="cboReportType" hflex="1" width="200px"
+                    mold="rounded" autodrop="true" autocomplete="true" >                                                          
+                    </combobox> 
+                    <label value="Font"/>
+                    <combobox id="cboFont" hflex="1" width="200px"
+                    mold="rounded" autodrop="true" autocomplete="true" >                                                          
+                    </combobox>                                                     
+                </row>   
+                <row>
+                    <label value="Header Font Color"/>
+                    <combobox id="cboHeaderFontColor" hflex="1" width="200px"
+                    mold="rounded" autodrop="true" autocomplete="true" >                                                          
+                    </combobox> 
+                    <label value="Details Font Color"/>
+                    <combobox id="cboDetailFontColor" hflex="1" width="200px"
+                    mold="rounded" autodrop="true" autocomplete="true" >                                                          
+                    </combobox>                                                     
+                </row>                                
+                <row>
+                    <label value="Data Source Name"/>
+                    <textbox id="txtProcedureName" width="400px" />   
+                    <label value="Paper Type"/>
+                    <combobox id="cboPaperType" hflex="1" width="200px"
+                    mold="rounded" autodrop="true" autocomplete="true" >                                                          
+                    </combobox>                                                     
+                </row>
+                <row>
+                    <label value="Orientation"/>
+                    <combobox id="cboOrientation" hflex="1" width="200px"
+                    mold="rounded" autodrop="true" autocomplete="true" >                                                          
+                    </combobox> 
+                    <label value="Grouping Font Size"/>
+                    <decimalbox format="###.##" id="txtGroupingFontSize" width="200px" />                                                        
+                                                                     
+                </row>
+                <row>
+                    <label value="Header Font Size"/>
+                    <decimalbox format="###.##" id="txtHeaderFontSize" width="200px" />   
+                    <label value="Detail Font Size"/>
+                    <decimalbox id="txtDetailFontSize" width="200px" />                                                     
+                </row> 
+                <row>
+ 
+                    <label value="Has Logo"/>
+                    <checkbox id="chkHasLogo"  />                        
+                    <label value="Logo Path"/>
+                    <button label="Upload Image" upload="true,maxsize=300" id="btnImage">
+                        <attribute name="onUpload"><![CDATA[
+                            org.zkoss.util.media.Media media = event.getMedia();
+                            if (media instanceof org.zkoss.image.Image) {
+                                org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+                                image.setContent(media);
+                                image.setParent(pics);
+                            } else {
+                                Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+                                break;
+                            }
+                        ]]></attribute>
+                    </button>                                                    
+                </row>  
+                 <row>
+ 
+                    <label value="Disabled"/>
+                    <checkbox id="chkDisabled"  />  
+                     <label value=""/>
+                      <label value=""/>
+                 </row>
+                
+                <row spans="4">
+                <tabbox id="tb" width="100%" height="350px">
+                        <tabs>
+                                
+                                <tab label="Report Details" />
+                                <tab label="Grouping Details" /> 
+                                <tab label="Data Sorting" />
+                                <tab label="Graphical Axis" />
+                                <tab label="Form Type Report" />
+                                 <tab label="Logo" />
+                        </tabs>
+                        <tabpanels>
+                            <tabpanel id="tabFieldColumns">
+                                <grid >
+                                    <columns>
+                                        <column label=""  />
+                                        <column label="" width="200px" /> 
+                                        <column label="" />
+                                                             
+                                    </columns>                            
+                                    <rows>
+
+                                         
+                                            <row spans="3">
+                                               <toolbar mold="panel" align="center">
+                                                       <button label="Load Fields" id="btnLoadFields"/> 
+                                               </toolbar>                     
+                                            </row> 
+                                         
+                                        <row>
+                                            <grid id="gridColumns" sizedByContent="true" span="true" width="100%" height="230px"   mold="paging" pageSize="5" vflex="1" pagingPosition="bottom">
+                                                <columns>
+                                                    <column label="ColumnName"  />
+                                                    <column label="DataType"  /> 
+                                                </columns> 
+                                                <rows>
+                                                    
+                                                </rows>                                                
+                                            </grid>
+                                            <grid sizedByContent="true" span="true" width="100%" height="230px"   mold="paging" pageSize="5" vflex="1" pagingPosition="bottom">
+                                                <columns>
+                                                    <column label=""  /> 
+                                                </columns>  
+                                                <rows>
+                                                    <row>
+                                                        <toolbar mold="panel" align="center">
+                                                                <button label="Add Selected" id="btnAddSelectedField"/> 
+                                                        </toolbar>                     
+                                                     </row>  
+                                                    <row>
+                                                        <toolbar mold="panel" align="center">
+                                                                <button label="Remove Selected" id="btnRemoveSelectedField"/> 
+                                                        </toolbar>                     
+                                                     </row> 
+                                                    <row>
+                                                        <toolbar mold="panel" align="center">
+                                                                <button label="Move Up" id="btnMoveUp"/> 
+                                                        </toolbar>                     
+                                                     </row>  
+                                                    <row>
+                                                        <toolbar mold="panel" align="center">
+                                                                <button label="Move Down" id="btnMoveDown"/> 
+                                                        </toolbar>                     
+                                                     </row>   
+                                                    <row>
+                                                        <toolbar mold="panel" align="center">
+                                                                <button label="Move To Report Grouping" id="btnMoveToGrouping"/> 
+                                                        </toolbar>                     
+                                                     </row>                                                                                                                                                                                                                 
+                                                </rows>                                                                                                
+                                            </grid> 
+                                            <grid id="gridReportColumns" sizedByContent="true" span="true" width="100%" height="230px"   mold="paging" pageSize="5" vflex="1" pagingPosition="bottom">
+                                                <columns>
+                                                    <column label="ColumnName"  />
+                                                    <column label="DisplayText"  /> 
+                                                    <column label="ColumnWidth"  /> 
+                                                    <column label="SummaryFunction"  /> 
+                                                    <column label="DataType" visible="false"  /> 
+                                                </columns> 
+                                                <rows>
+                                                    
+                                                </rows>                                                                                                 
+                                            </grid>                                                                                       
+                                        </row>  
+                                    </rows>
+                                                   
+                                </grid>
+                            </tabpanel>
+                            <tabpanel id="tabGroupFieldColumns">
+                                <grid >
+                                    <columns>
+                                        <column label=""  />
+                                        <column label="" width="200px" /> 
+                                       
+                                                             
+                                    </columns>                            
+                                    <rows>
+                                        <row>
+                                            <grid id="gridReportGroups" sizedByContent="true" span="true" width="100%" height="230px"   mold="paging" pageSize="7" vflex="1" pagingPosition="bottom">
+                                                <columns>
+                                                    <column label="ColumnName"  /> 
+                                                    <column label="Order Type"  /> 
+                                                </columns> 
+                                                <rows>
+
+                                                </rows>                                                                                                 
+                                            </grid> 
+                                            <grid sizedByContent="true" span="true" width="100%" height="250px"   mold="paging" pageSize="5" vflex="1" pagingPosition="bottom">
+                                                    <columns>
+                                                        <column label=""  /> 
+                                                    </columns>  
+                                                    <rows> 
+                                                        <row>
+                                                            <toolbar mold="panel" align="center">
+                                                                    <button label="Move Up" id="btnGroupMoveUp"/> 
+                                                            </toolbar>                     
+                                                         </row>  
+                                                        <row>
+                                                            <toolbar mold="panel" align="center">
+                                                                    <button label="Move Down" id="btnMoveGroupDown"/> 
+                                                            </toolbar>                     
+                                                         </row>                                                                                                                                                                                                                   
+                                                    </rows>                                                                                                
+                                            </grid>
+                                        </row>
+                                    </rows> 
+                                </grid>                              
+                            </tabpanel>
+                            <tabpanel id="tabSortingFieldColumns">
+                                <grid >
+                                    <columns>
+                                        <column label=""  />
+                                        <column label="" width="200px" /> 
+                                       
+                                                             
+                                    </columns>                            
+                                    <rows>
+                                        <row>
+                                            <grid id="gridReportSort" sizedByContent="true" span="true" width="100%" height="230px"   mold="paging" pageSize="7" vflex="1" pagingPosition="bottom">
+                                                <columns>
+                                                    <column label="ColumnName"  /> 
+                                                    <column label="Sort Type"  /> 
+                                                </columns> 
+                                                <rows>
+
+                                                </rows>                                                                                                 
+                                            </grid> 
+                                            <grid sizedByContent="true" span="true" width="100%" height="250px"   mold="paging" pageSize="5" vflex="1" pagingPosition="bottom">
+                                                    <columns>
+                                                        <column label=""  /> 
+                                                    </columns>  
+                                                    <rows> 
+                                                        <row>
+                                                            <toolbar mold="panel" align="center">
+                                                                    <button label="Move Up" id="btnSortMoveUp"/> 
+                                                            </toolbar>                     
+                                                         </row>  
+                                                        <row>
+                                                            <toolbar mold="panel" align="center">
+                                                                    <button label="Move Down" id="btnMoveSortDown"/> 
+                                                            </toolbar>                     
+                                                         </row>                                                                                                                                                                                                                   
+                                                    </rows>                                                                                                
+                                            </grid>
+                                        </row>
+                                    </rows> 
+                                </grid>                              
+                            </tabpanel>                            
+                            <tabpanel>
+                            </tabpanel>
+                            <tabpanel>
+                            </tabpanel> 
+                            <tabpanel>
+                                <vlayout id="pics" height="300px" style="overflow:auto" />
+                            </tabpanel>                                                                       
+                        </tabpanels>
+                </tabbox>                    
+                 </row>  
+                 <row spans="4">
+                    <toolbar mold="panel" align="center">
+                            <button label="View" id="btnView"/>
+                            <button label="Add" id="btnAdd"/>
+                            <button label="Edit" id="btnEdit"/>
+                            <button label="Save" id="btnSave"/>
+                    </toolbar>                     
+                 </row> 
+                 <row spans="4">
+                      <textbox id="txtMessageLine" width="1300px" readonly="true" />
+                 </row>                                         
+                </rows>
+            </grid>
+
+            </center>
+            <south border="0">
+                                 
+
+            </south>
+        </borderlayout>
+    </window>
+</zk>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window  title="Report Log In"   id="winKnock" border="normal" width="800px"  height="400px" closable="true">
+        <borderlayout  height="350px"  apply="Builder.LoginController">
+                    <center>
+                    <grid vflex="true" hflex="true">
+                        <columns hflex="min" vflex="min">
+                            <column label="" width="200px" />
+                            <column label="" />
+                                       
+                        </columns>                            
+                        <rows>
+                        <row spans="2">
+                            <image id="" src="Images/images.png" width="90px"/>
+                        </row>
+                        <row>
+                            <label value="User Name"/>
+                            <textbox id="txtUserName" width="200px" />                                                     
+                        </row>
+                        <row>
+                            <label value="Password"/>
+                            <textbox type="password" id="txtPassword" width="200px" />                                                     
+                        </row>  
+                                                                      
+                        </rows>
+                    </grid>
+                    </center> 
+                   <south border="0">
+                           <toolbar mold="panel" align="center">
+                                   <button label="Log In" id="btnLogin"/> 
+                           </toolbar>                        
+                   </south>
+        </borderlayout>        
+    </window>
+</zk>

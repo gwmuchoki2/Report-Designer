@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <Configuration>
+        <DBType1>MSSQL</DBType1>
+        <DBServerName1>localhost</DBServerName1>
+        <DBUserName1>AccountBook</DBUserName1>
+        <DBPassword1>budget</DBPassword1>
+        <DBName1>CDSBRNET</DBName1>
+        <DBPort1>1433</DBPort1>
+        
+        <ReportDBType>MySQL</ReportDBType>
+        <ReportDBServerName>localhost</ReportDBServerName>
+        <ReportDBUserName>root</ReportDBUserName>
+        <ReportDBPassword>pass</ReportDBPassword>
+        <ReportDBName>hotelipopote</ReportDBName>
+        <ReportDBPort>3306</ReportDBPort>         
+        
+        <DBType>MySQL</DBType>
+        <DBServerName>localhost</DBServerName>
+        <DBUserName>root</DBUserName>
+        <DBPassword>pass</DBPassword>
+        <DBName>hotelipopote</DBName>
+        <DBPort>3306</DBPort>        
+    </Configuration>
+</root>

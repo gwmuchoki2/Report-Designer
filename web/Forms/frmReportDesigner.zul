@@ -1,0 +1,90 @@
+<zk xmlns:n="native">
+    <window id="homeWindow">
+        <style src="style.css"/>
+        <borderlayout height="650px">
+             <center>
+                <hbox  spacing="20">
+                    <menubar id="menubar"  orient="vertical" autodrop="true">
+                    <menu label="Designer">
+                            <menupopup>
+                                    <menuitem label="Report Categories" onClick="alert(self.label)" />
+                                    <menuitem label="Tabular Reports" onClick="alert(self.label)" />
+                                    <menuitem label="Graphical Reports" onClick="alert(self.label)" />
+                                    <menuitem label="Custom Reports" onClick="alert(self.label)" />                                
+                                    <menu label="Mainboard CPU &amp; RAM">
+                                           <menupopup> 
+                                            <menuitem label="Report Categories" onClick="alert(self.label)" />
+                                            <menuitem label="Tabular Reports" onClick="alert(self.label)" />
+                                            <menuitem label="Graphical Reports" onClick="alert(self.label)" />
+                                            <menuitem label="Custom" onClick="alert(self.label)" />
+                                           </menupopup> 
+                                    </menu>
+                                    <menu label="Input">
+                                            <menupopup>
+                                                    <menu label="Devices">
+                                                            <menupopup>
+                                                                    <menuitem label="Mouse" onClick="alert(self.label)" />
+                                                                    <menuitem label="Keyboards" onClick="alert(self.label)" />
+                                                                    <menuitem label="Accessories" onClick="alert(self.label)" />
+                                                            </menupopup>
+                                                    </menu>
+                                                    <menuitem label="Gaming" onClick="alert(self.label)" />
+                                                    <menuitem label="Graphic Tablets" onClick="alert(self.label)" />
+                                            </menupopup>
+                                    </menu>
+                                    <menu label="Monitors">
+                                            <menupopup>
+                                                    <menuitem label="LCD" onClick="alert(self.label)" />
+                                                    <menuitem label="CRT" onClick="alert(self.label)" />
+                                                    <menuitem label="Touchscreen" onClick="alert(self.label)" />
+                                            </menupopup>
+                                    </menu>
+                                    <menuseparator></menuseparator>
+                                    <menuitem label="Data Objects" onClick="alert(self.label)" />
+                                    <menuitem label="Mac" onClick="alert(self.label)" />
+                                    <menuitem label="Others" onClick="alert(self.label)" />
+                            </menupopup>
+                    </menu>
+                    <menu label="Finance">
+                            <menupopup>
+                                    <menuitem label="Browsers and Plugins" onClick="alert(self.label)" />
+                                    <menuitem label="Firewalls and Security" onClick="alert(self.label)" />
+                                    <menuitem label="Audio and Video" onClick="alert(self.label)" />
+                                    <menuitem label="Photos and Images" onClick="alert(self.label)" />
+                                    <menuitem label="Desktop" onClick="alert(self.label)" />
+                                    <menuitem label="Office and News" onClick="alert(self.label)" />
+                                    <menuitem label="Developer Tools" onClick="alert(self.label)" />
+                                    <menuitem label="Others" onClick="alert(self.label)" />
+                            </menupopup>
+                    </menu>
+                    <menuitem label="Credit" onClick="alert(self.label)" />
+                    <menuitem label="Customer Care" onClick="alert(self.label)" />
+                    <menuitem label="Accounts" onClick="alert(self.label)" />
+                    <menuitem label="Communication" onClick="alert(self.label)" />
+                    </menubar>
+
+                    <div  id="container" sclass="container" width="420px">
+                            <vlayout id="product_list" width="100%">
+                                    <n:h1 class="mo_head">Top Sales</n:h1>
+                                    <separator bar="true"></separator>
+                                    <hlayout spacing="10px">
+                                             <!--
+                                            <zk forEach="${products}" if="${each le num }">
+                                                    <image src="/widgets/menu/menu_orientation/img/product${each}.png" />
+                                            </zk>
+                                            -->
+                                    </hlayout>
+                                    <hlayout spacing="10px">
+                                        <!--
+                                            <zk forEach="${products}" if="${each gt num and each le (num * 2)}">
+                                                    <image src="/widgets/menu/menu_orientation/img/product${each}.png" />
+                                            </zk>-->
+                                    </hlayout>
+
+                            </vlayout>
+                    </div>
+                </hbox>
+             </center>
+        </borderlayout>
+    </window>
+</zk>

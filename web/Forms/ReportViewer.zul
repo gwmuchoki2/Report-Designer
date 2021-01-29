@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window  title="Reports Viewer"   id="winViewer" border="normal" width="1500px"  height="850px" closable="true">
+        
+    </window>
+</zk>

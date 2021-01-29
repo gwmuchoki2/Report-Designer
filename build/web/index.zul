@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+index.zul
+
+{{IS_NOTE
+	Purpose:
+		
+	Description:
+		
+	History:
+		Mon Jun 12 21:23:35     2006, Created by tomyeh
+		Fri May 01 04:36:35     2009, Modified by stera
+}}IS_NOTE
+
+Copyright (C) 2006 Potix Corporation. All Rights Reserved.
+
+{{IS_RIGHT
+}}IS_RIGHT
+-->
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window  title="Reports Builder"  apply="Builder.ReportController" id="MyWin"
+        >
+        <!--style="background-image: url('Images/ReportDesigner.jpeg');"
+      <borderlayout  apply="Builder.ReportController">
+          <north>
+               <div>-->
+                <toolbar height="100px"><!--align="end"-->
+                        <toolbarbutton id="btnReportViewer" height="80px" label="Report Viewer" image="Images/Reports_report_document_graph.png"/>
+                        <toolbarbutton id="btnReportDesigner"  height="80px" label="Report Designer" image="Images/1451308479_sign-up.png"/>
+                        <toolbarbutton  height="80px" id ="btnAccessRights" label="Access Rights"  image="Images/1451308553_Edit-Male-User.png"/>
+                        <toolbarbutton  height="80px" id="onBtnLogOff" label="Log Off"  image="Images/logoff-icone-9802-64.png"/>
+                 </toolbar>
+                 <!--
+              </div>
+          </north>
+      </borderlayout>--><image id="" src="Images/academic-poster-ppt-background.jpg" width="2000px"  height="750px"/>
+    </window>
+</zk>
